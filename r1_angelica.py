@@ -13,7 +13,10 @@ from linefollow import followBlack
 #######################################################################
 ev3.speaker.beep() # notify done
 # drive until black
-
+while r_color.reflection() >10:
+    driver.drive(125, 0)
+    wait(10)
+driver.stop()
 
 while l_color.reflection() >10:
     # Start following the line endlessly.
@@ -22,25 +25,27 @@ while l_color.reflection() >10:
 
 
 driver.stop()
-driver.turn(110)
+driver.turn(100)
 driver.stop()
 driver.straight(400)
 driver.stop()
 driver.straight(-408)
 driver.stop()
-driver.turn(110)
+driver.turn(100)
 driver.stop()
-
-while r_color.reflection() >10:
-    # Start following the line endlessly.
+driver.settings(straight_speed=300)
+driver.straight(-775)
+driver.stop()
+# while r_color.reflection() >10:
+#     # Start following the line endlessly.
     
-    followBlack(l_color, -150)
+#     followBlack(l_color, -150)
 
-while r_color.reflection() >10:
-    # Start following the line endlessly.
+# while r_color.reflection() >10:
+#     # Start following the line endlessly.
     
-    followBlack(l_color, -150)
-#
+#     followBlack(l_color, -150)
+# #
 # while r_color.reflection() <95:
 #     driver.drive(20, 0)
 #     wait(10)
