@@ -1,5 +1,5 @@
 #!/usr/bin/env pybricks-micropython
-from robotsetup import ev3, driver, fork, r_color, l_color
+from robotsetup import ev3, driver, fork, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor, InfraredSensor, UltrasonicSensor, GyroSensor)
 from pybricks.parameters import Port, Stop, Direction, Button, Color
@@ -7,6 +7,7 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 from linefollow import followBlack
+import time
 
 #######################################################################
 ## Run Code Starts Here                                              ##
@@ -14,7 +15,14 @@ from linefollow import followBlack
 ev3.speaker.beep() # notify done
 # drive until black
 
+ev3.speaker.beep()
+r_DriveMotor.run(120)
+l_DriveMotor.run(-120)
+gyro.reset_angle(0)
+while gyro.angle() <=90:
+    print(str(gyro.angle()))
 
+driver.stop()
 while l_color.reflection() >10:
     # Start following the line endlessly.
     
@@ -22,24 +30,47 @@ while l_color.reflection() >10:
 
 
 driver.stop()
-driver.turn(110)
+ev3.speaker.beep()
+r_DriveMotor.run(-60)
+l_DriveMotor.run(60)
+gyro.reset_angle(0)
+while gyro.angle() >=-85:
+    print(str(gyro.angle()))
+
 driver.stop()
 driver.straight(400)
 driver.stop()
 driver.straight(-408)
 driver.stop()
-driver.turn(110)
+
+ev3.speaker.beep()
+r_DriveMotor.run(-60)
+l_DriveMotor.run(60)
+while gyro.angle() >=-175:
+    print(str(gyro.angle()))
+
+driver.stop()
+driver.settings(straight_speed=350)
+driver.straight(-900)
 driver.stop()
 
-while r_color.reflection() >10:
-    # Start following the line endlessly.
-    
-    followBlack(l_color, -150)
+r_DriveMotor.run(300)
+time.sleep(50)
+# driver.stop()
 
-while r_color.reflection() >10:
-    # Start following the line endlessly.
+# #driver.turn(110)
+# driver.stop()
+
+
+# while r_color.reflection() >10:
+#     # Start following the line endlessly.
     
-    followBlack(l_color, -150)
+#     followBlack(l_color, -150)
+
+# while r_color.reflection() >10:
+#     # Start following the line endlessly.
+    
+#     followBlack(l_color, -150)
 #
 # while r_color.reflection() <95:
 #     driver.drive(20, 0)
