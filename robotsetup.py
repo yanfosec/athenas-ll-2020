@@ -26,4 +26,4 @@ r_color = ColorSensor(Port.S4)
 l_color = ColorSensor(Port.S1)
 
 ## SET UP THE SENSORS ##
-#gyro = GyroSensor(Port.S1)
+gyro = GyroSensor(Port.S2)
