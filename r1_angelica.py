@@ -15,14 +15,11 @@ import time
 ev3.speaker.beep() # notify done
 # drive until black
 
-ev3.speaker.beep()
-r_DriveMotor.run(120)
-l_DriveMotor.run(-120)
-gyro.reset_angle(0)
-while gyro.angle() <=90:
-    print(str(gyro.angle()))
-
+while r_color.reflection() >10:
+    driver.drive(125, 0)
+    wait(10)
 driver.stop()
+
 while l_color.reflection() >10:
     # Start following the line endlessly.
     
@@ -30,24 +27,12 @@ while l_color.reflection() >10:
 
 
 driver.stop()
-ev3.speaker.beep()
-r_DriveMotor.run(-60)
-l_DriveMotor.run(60)
-gyro.reset_angle(0)
-while gyro.angle() >=-85:
-    print(str(gyro.angle()))
+
 
 driver.stop()
 driver.straight(400)
 driver.stop()
 driver.straight(-408)
-driver.stop()
-
-ev3.speaker.beep()
-r_DriveMotor.run(-60)
-l_DriveMotor.run(60)
-while gyro.angle() >=-175:
-    print(str(gyro.angle()))
 
 driver.stop()
 driver.settings(straight_speed=350)
@@ -62,6 +47,13 @@ time.sleep(50)
 # driver.stop()
 
 
+
+driver.turn(100)
+driver.stop()
+driver.settings(straight_speed=300)
+driver.straight(-775)
+driver.stop()
+
 # while r_color.reflection() >10:
 #     # Start following the line endlessly.
     
@@ -71,7 +63,7 @@ time.sleep(50)
 #     # Start following the line endlessly.
     
 #     followBlack(l_color, -150)
-#
+
 # while r_color.reflection() <95:
 #     driver.drive(20, 0)
 #     wait(10)
