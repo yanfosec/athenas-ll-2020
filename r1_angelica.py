@@ -8,6 +8,7 @@ from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 from linefollow import followBlack
 import time
+from turning import gyroRight,gyroLeft
 
 #######################################################################
 ## Run Code Starts Here                                              ##
@@ -15,26 +16,27 @@ import time
 ev3.speaker.beep() # notify done
 # drive until black
 
-while r_color.reflection() >10:
+gyroRight(89)
+
+while r_color.reflection() >12:
     driver.drive(125, 0)
+    
     wait(10)
 driver.stop()
 
-while l_color.reflection() >10:
-    # Start following the line endlessly.
-    
+# follow black line until it sees the line that goes under the bridge 
+while l_color.reflection() >10:    
     followBlack(r_color, 150)
 
-
+#
 driver.stop()
-
-
-driver.stop()
+gyroLeft(89)
 driver.straight(400)
 driver.stop()
 driver.straight(-408)
 
 driver.stop()
+gyroRight(89)
 driver.settings(straight_speed=350)
 driver.straight(-900)
 driver.stop()
