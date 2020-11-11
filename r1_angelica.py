@@ -19,8 +19,7 @@ ev3.speaker.beep() # notify done
 gyroRight(89)
 
 while r_color.reflection() >12:
-    driver.drive(125, 0)
-    
+    driver.drive(125, 0)    
     wait(10)
 driver.stop()
 
