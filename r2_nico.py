@@ -1,6 +1,5 @@
 #!/usr/bin/env pybricks-micropython
 from robotsetup import ev3, driver, fork, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor, dumper
-from pybricks.hubs import EV3Brick
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.media.ev3dev import SoundFile, ImageFile
 from linefollow import followBlack
