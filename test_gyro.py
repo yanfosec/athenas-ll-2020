@@ -7,20 +7,52 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 from linefollow import followBlack
-from turning import gyroLeft, gyroRight
+from turning import gyroRightTo, gyroLeftTo, gyroTurnTo
 import time
 
 #######################################################################
 ## Run Code Starts Here                                              ##
 #######################################################################
 
+
+
+gyroTurnTo(45)
+time.sleep(5)
+# print("Currently at: " + str(gyro.angle()))
+# gyroTurnTo(90)
+# time.sleep(5)
+# print("Currently at: " + str(gyro.angle()))
+# gyroTurnTo(45)
+# time.sleep(5)
+# print("Currently at: " + str(gyro.angle()))
+# gyroTurnTo(0)
+# print("Currently at: " + str(gyro.angle()))
+
+
+# gyro.reset_angle(0)
+
+# print("Start at " + str(gyro.angle()))
+# gyroRight(90)
+# print("End at " + str(gyro.angle()))
+# gyroLeft(gyro.angle())
+# while gyro.angle() != 0:
+#     if gyro.angle()>1:
+#         gyroLeft(-1*gyro.angle())
+#     else:
+#         gyroRight(gyro.angle())
+
+# print("End at " + str(gyro.angle()))
+
+# # print("Gyro Turns")
+# # for x in range(5):
+# #     gyroRight(89)
+# #     print(str(gyro.angle()))
+# #     time.sleep(2)
+#     gyroLeft(89)
+#     print(str(gyro.angle()))
+#     time.sleep(2)
+=======
 #print(str(calcOffset(gyro)))
-print("Gyro Turns")
-for x in range(10):
-    gyroRight(90)
-    print(str(gyro.angle()))
-    gyroLeft(90)
-    print(str(gyro.angle()))
 
 # time.sleep(1)
 # print("Driver Turns")

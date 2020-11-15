@@ -8,8 +8,10 @@ from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Calculate the light threshold. Choose values based on your measurements.
+
 BLACK = 9
 WHITE = 95
+
 threshold = (BLACK + WHITE) / 2
 
 # Set the gain of the proportional line controller. This means that for every
