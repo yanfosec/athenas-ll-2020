@@ -24,7 +24,7 @@ fork = Forklift(f_motor, 650)
 
 #DUMP
 dumpMotor = Motor(Port.D)
-dumper = Dump(dumpMotor, 160)
+dumper = Dump(dumpMotor, 165)
 
 ## CREATE THE COLOR SENSORS ##
 r_color = ColorSensor(Port.S4) 
