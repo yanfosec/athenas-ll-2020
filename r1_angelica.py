@@ -9,6 +9,7 @@ from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 from linefollow import followBlack
 import time
+from turning import gyroRight,gyroLeft
 
 #######################################################################
 ## Run Code Starts Here                                              ##
@@ -17,7 +18,6 @@ ev3.speaker.beep() # notify done
 # drive until black
 gyro.reset_angle(0)
 
-#gyroRight(74)
 gyroRightTo(74)
 ev3.speaker.beep() 
 while r_color.reflection() >10:
@@ -34,12 +34,12 @@ driver.stop()
 
 # robot turns to go under the bridge
 gyroLeft(81)
-# go forward under the bridge and back to the black line 
 
 driver.straight(400)
 driver.stop()
 driver.straight(-420)
 driver.stop()
+
 # turns left and goes backwards at the speed of 350 to the treadmill
 gyroLeft(80)
 gyro.reset_angle(0)

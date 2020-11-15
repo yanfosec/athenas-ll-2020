@@ -8,8 +8,10 @@ from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Calculate the light threshold. Choose values based on your measurements.
-BLACK = 8
-WHITE = 86
+
+BLACK = 9
+WHITE = 95
+
 threshold = (BLACK + WHITE) / 2
 
 # Set the gain of the proportional line controller. This means that for every
@@ -31,4 +33,5 @@ def followBlack(thisSensor,DRIVE_SPEED=150):
     driver.drive(DRIVE_SPEED, turn_rate)
 
     # You can wait for a short time or do other things in this loop.
+    print(str(thisSensor.reflection()))
     wait(10)
