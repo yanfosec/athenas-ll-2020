@@ -8,7 +8,7 @@ from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Calculate the light threshold. Choose values based on your measurements.
-BLACK = 9
+BLACK = 8
 WHITE = 86
 threshold = (BLACK + WHITE) / 2
 
