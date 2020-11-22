@@ -1,5 +1,5 @@
 #!/usr/bin/env pybricks-micropython
-from robotsetup import ev3, driver, fork, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor, dumper
+from robotsetup import ev3, driver, door, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor, dumper
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.media.ev3dev import SoundFile, ImageFile
 from linefollow import followBlack
@@ -10,42 +10,53 @@ from dump import Dump
 driver.settings(straight_speed=250)
 
 #drive to the dance floor
-gyroRight(28)
-driver.straight(935)
+door.up(150,50)#lifts door uo 50%
+gyroRight(28)#turns right to face dance floor health
+driver.straight(935) #drives to dance floor
 driver.stop()
-gyroRight(65)
-driver.settings(straight_speed=125)
-while r_color.reflection() >12:
+door.down(150,50)
+driver.stop() #stops for gyro
+gyroRight(65) #turns to face black line
+driver.settings(straight_speed=125) #set straight speed
+while r_color.reflection() >12: #goes to black line 
     driver.drive(125, 0)
+driver.stop() #stops
+driver.straight(145) #moves stright to get around target
+driver.stop()#stops for gyro
+gyroRight(65)#turns to get dump facting target
+driver.stop() #stops
+driver.straight(-25) #moves backwards to get dumper over target
 driver.stop()
-driver.straight(20)
+dumper.down(300,90) #moves dumper down 90% to dump blocks
+driver.straight(10) #move forward to not catch on target
 driver.stop()
-#while r_color.reflection() >12:
- #   driver.drive(125, 0)
-driver.straight(125)
-driver.stop()
-gyroRight(65)
-driver.stop()
-driver.straight(-50)
-dumper.down(300,90)
-driver.straight(10)
-dumper.up(300,30)
-driver.straight(125)
-driver.stop()
-gyroRight(40)
-driver.straight(-55)
-driver.straight(10)
-dumper.up(150,10)
-driver.straight(10)
-dumper.up(150,10)
-driver.straight(50)
+dumper.up(300,30) #dumper moves up 30% to get lined up with flip
+driver.straight(125) #moves forward to be at right distance to flip
+driver.stop() #stops for gyro
+gyroRight(40) #turns to line up wiht flip
+driver.straight(-55) #backward so flip is in dump and turn flip
+driver.straight(10) #forward for +special effects+ (also so we knock flip sligly)
+dumper.up(150,10) #dump moves up to flip
+driver.straight(10) #forward to not catch
+dumper.up(150,10) #moves up to finish fliping the flip
+driver.straight(50) #goes forward to 
 driver.stop()
 driver.settings(straight_speed=300)
+driver.stop() 
+gyroRight(20)
 driver.stop()
-gyroRight(55)
-driver.straight(500)
+driver.straight(50)
+door.up(125,45)
 driver.stop()
-gyroLeft(65)
-driver.straight (800)
-dumper.up(300,40)
+driver.straight(50)
+driver.stop()
+driver.straight(-50)
+driver.stop()
+door.down(100,45)
+gyroRight(41)
+driver.straight(1300)
+#driver.stop()
+#gyroLeft(65)
+#driver.straight (800)
+#dumper.up(300,40)
 
