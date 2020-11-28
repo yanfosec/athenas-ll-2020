@@ -14,8 +14,8 @@ from dump import Dump
 
 ## SET UP THE DRIVE CHASIS ##
 ev3 = EV3Brick()
-l_DriveMotor = Motor(Port.C)
-r_DriveMotor = Motor(Port.B)
+l_DriveMotor = Motor(Port.B)
+r_DriveMotor = Motor(Port.C)
 driver = DriveBase(l_DriveMotor,r_DriveMotor,68.8,111)
 
 ## CREATE THE FORKLIFT ##
@@ -23,8 +23,8 @@ f_motor = Motor(Port.A)
 fork = Forklift(f_motor, 650)
 
 #DUMP
-dumpMotor = Motor(Port.D)
-dumper = Dump(dumpMotor, 165)
+#dumpMotor = Motor(Port.D)
+#dumper = Dump(dumpMotor, 165)
 
 ## CREATE THE COLOR SENSORS ##
 r_color = ColorSensor(Port.S4) 
