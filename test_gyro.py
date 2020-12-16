@@ -18,15 +18,15 @@ import time
 
 gyroTurnTo(45)
 time.sleep(5)
-# print("Currently at: " + str(gyro.angle()))
-# gyroTurnTo(90)
-# time.sleep(5)
-# print("Currently at: " + str(gyro.angle()))
-# gyroTurnTo(45)
-# time.sleep(5)
-# print("Currently at: " + str(gyro.angle()))
-# gyroTurnTo(0)
-# print("Currently at: " + str(gyro.angle()))
+print("Currently at: " + str(gyro.angle()))
+gyroTurnTo(90)
+time.sleep(5)
+print("Currently at: " + str(gyro.angle()))
+gyroTurnTo(45)
+time.sleep(5)
+print("Currently at: " + str(gyro.angle()))
+gyroTurnTo(0)
+print("Currently at: " + str(gyro.angle()))
 
 
 # gyro.reset_angle(0)
@@ -51,7 +51,7 @@ time.sleep(5)
 #     gyroLeft(89)
 #     print(str(gyro.angle()))
 #     time.sleep(2)
-=======
+
 #print(str(calcOffset(gyro)))
 
 # time.sleep(1)

@@ -9,8 +9,8 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Calculate the light threshold. Choose values based on your measurements.
 
-BLACK = 9
-WHITE = 95
+BLACK = 10
+WHITE = 98
 
 threshold = (BLACK + WHITE) / 2
 
@@ -20,7 +20,7 @@ threshold = (BLACK + WHITE) / 2
 
 # For example, if the light value deviates from threshold by 10, the robot
 # steers at 10*1.2 = 12 degrees per second.
-PROPORTIONAL_GAIN = 0.8
+PROPORTIONAL_GAIN = 0.7
 
 def followBlack(thisSensor,DRIVE_SPEED=150):
     # Calculate the deviation from the threshold.
@@ -33,5 +33,5 @@ def followBlack(thisSensor,DRIVE_SPEED=150):
     driver.drive(DRIVE_SPEED, turn_rate)
 
     # You can wait for a short time or do other things in this loop.
-    print(str(thisSensor.reflection()))
+    
     wait(10)

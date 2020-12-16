@@ -11,9 +11,12 @@ from linefollow import followBlack
 import time
 from turning import gyroRight,gyroLeft
 
+
 #######################################################################
 ## Run Code Starts Here                                              ##
 #######################################################################
+
+
 ev3.speaker.beep() # notify done
 # drive until black
 gyro.reset_angle(0)
@@ -31,9 +34,10 @@ while l_color.reflection() >9:
     # Start following the line endlessly.
     followBlack(r_color, 150)
 driver.stop()
-
+driver.straight(-10)
+driver.stop()
 # robot turns to go under the bridge
-gyroLeft(81)
+gyroLeft(80)
 
 driver.straight(400)
 driver.stop()
@@ -41,17 +45,17 @@ driver.straight(-420)
 driver.stop()
 
 # turns left and goes backwards at the speed of 350 to the treadmill
-gyroLeft(80)
+gyroLeft(77)
 gyro.reset_angle(0)
 
 driver.settings(straight_speed=350)
-driver.straight(-875)
+driver.straight(-877)
 driver.stop()
 #r_DriveMotor.run_time(100,2000)
 
-# turns left wheel backwards for 3500 milaseconds to turn the treadmill 
+# turns left wheel backwards for 3550 millaseconds to turn the treadmill 
 ev3.speaker.beep()
-l_DriveMotor.run_time(-500,3500)
+l_DriveMotor.run_time(-500,3550)
 ev3.speaker.beep()
 # goes forwards off of the treadmill
 driver.straight(300)
@@ -65,15 +69,12 @@ else:
     gyroLeft(gyro.angle()+10)
 
 ev3.speaker.beep() 
-while r_color.reflection() >10:
-    # when robot finds black line, it follows the black line to the bridge
+while l_color.reflection() >10:
     driver.drive(125, 0)
     wait(10)
 driver.stop()
 
 ev3.speaker.beep() 
-while l_color.reflection() >9:
+while True:
     # Start following the line endlessly.
-    followBlack(r_color, 150)
-
-
+    followBlack(l_color, 150)
