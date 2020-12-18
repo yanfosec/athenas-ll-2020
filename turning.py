@@ -1,6 +1,6 @@
 #!/usr/bin/env pybricks-micropython
-
 from robotsetup import ev3, driver, door, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor, dumper
+
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor, InfraredSensor, UltrasonicSensor, GyroSensor)
 from pybricks.parameters import Port, Stop, Direction, Button, Color
@@ -19,11 +19,8 @@ def gyroRight (degrees):
     finishAngle = startingAngle + degrees
     print("Right --> Starting at: " + str(startingAngle) + " need to turn " + str(degrees) + " Will stop at: " + str(finishAngle))
 
-    turnSpeed = 50
+    turnSpeed = 150
     while gyro.angle() <= finishAngle:
-    #turnSpeed = 60
-    #gyro.reset_angle(0)
-    #while gyro.angle() <= degrees:
             r_DriveMotor.run(-1 * turnSpeed)
             l_DriveMotor.run(turnSpeed)
     driver.stop()
@@ -35,11 +32,8 @@ def gyroLeft (degrees):
 
     print("Left --> Starting at: " + str(startingAngle) + " need to turn " + str(degrees) + " Will stop at: " + str(finishAngle))
 
-    turnSpeed = 50
+    turnSpeed = 150
     while gyro.angle() >= finishAngle:
-    #turnSpeed = 60
-    #gyro.reset_angle(0)
-    #while gyro.angle() >= -1 * degrees:
             r_DriveMotor.run(turnSpeed)
             l_DriveMotor.run(-1 * turnSpeed)
     
