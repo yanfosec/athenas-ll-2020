@@ -21,9 +21,6 @@ def gyroRight (degrees):
 
     turnSpeed = 150
     while gyro.angle() <= finishAngle:
-    #turnSpeed = 60
-    #gyro.reset_angle(0)
-    #while gyro.angle() <= degrees:
             r_DriveMotor.run(-1 * turnSpeed)
             l_DriveMotor.run(turnSpeed)
     driver.stop()
@@ -37,9 +34,6 @@ def gyroLeft (degrees):
 
     turnSpeed = 150
     while gyro.angle() >= finishAngle:
-    #turnSpeed = 60
-    #gyro.reset_angle(0)
-    #while gyro.angle() >= -1 * degrees:
             r_DriveMotor.run(turnSpeed)
             l_DriveMotor.run(-1 * turnSpeed)
     
