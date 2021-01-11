@@ -6,13 +6,13 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
-class Door:
+class Door: #creacting the class
 
-    CURRENT_ANGLE = 0
-    global ONE_PERCENT
+    CURRENT_ANGLE = 0 
+    global ONE_PERCENT #making these words global
     global DOORA
 
-    def __init__ (self, motorobject, maxangle):
+    def __init__ (self, motorobject, maxangle): #creating a function to set up the thing
         global DOORA
         global ONE_PERCENT
         DOORA = motorobject
@@ -21,8 +21,8 @@ class Door:
 
         return
     
-    def up (self, speed, pct):
+    def up (self, speed, pct): #creating a function for up
         DOORA.run_angle(speed, pct * ONE_PERCENT * -1, then=Stop.HOLD, wait=True)
 
-    def down (self, speed, pct):
+    def down (self, speed, pct): #creating a function for down
         DOORA.run_angle(speed, pct * ONE_PERCENT, then=Stop.HOLD, wait=True)
