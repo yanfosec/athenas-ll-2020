@@ -1,5 +1,5 @@
 #!/usr/bin/env pybricks-micropython
-from robotsetup import ev3, driver, fork, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor
+from robotsetup import ev3, driver, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor
 from turning import gyroLeft, gyroRight, gyroRightTo
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor, InfraredSensor, UltrasonicSensor, GyroSensor)
@@ -45,17 +45,17 @@ driver.straight(-420)
 driver.stop()
 
 # turns left and goes backwards at the speed of 350 to the treadmill
-gyroLeft(77)
+gyroLeft(82)
 gyro.reset_angle(0)
 
 driver.settings(straight_speed=350)
-driver.straight(-877)
+driver.straight(-900)
 driver.stop()
 #r_DriveMotor.run_time(100,2000)
 
 # turns left wheel backwards for 3550 millaseconds to turn the treadmill 
 ev3.speaker.beep()
-l_DriveMotor.run_time(-500,3550)
+l_DriveMotor.run_time(-500,4000)
 ev3.speaker.beep()
 # goes forwards off of the treadmill
 driver.straight(300)

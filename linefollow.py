@@ -10,7 +10,7 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 # Calculate the light threshold. Choose values based on your measurements.
 
 BLACK = 10
-WHITE = 98
+WHITE = 95
 
 threshold = (BLACK + WHITE) / 2
 
