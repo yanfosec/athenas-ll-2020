@@ -8,9 +8,6 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 from door import Door
 from dump import Dump
 
-# This program requires LEGO EV3 MicroPython v2.0 or higher.
-# Click "Open user guide" on the EV3 extension tab for more information.
-
 
 ## SET UP THE DRIVE CHASIS ##
 ev3 = EV3Brick()

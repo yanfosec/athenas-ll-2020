@@ -6,13 +6,13 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
-class Dump:
+class Dump: #creating a class
 
     CURRENT_ANGLE = 0
-    global ONE_PERCENT
+    global ONE_PERCENT #making theese words globle globle
     global FLIFT
 
-    def __init__ (self, motorobject, maxangle):
+    def __init__ (self, motorobject, maxangle): #creating a functions to set it up
         global FLIFT
         global ONE_PERCENT
         FLIFT = motorobject
@@ -21,8 +21,8 @@ class Dump:
 
         return
 
-    def down(self,speed,pct):
+    def down(self,speed,pct): #creating a function to go down
         FLIFT.run_angle(speed, pct * ONE_PERCENT * -1, then=Stop.HOLD, wait=True)
 
-    def up(self,speed,pct):
+    def up(self,speed,pct): #creating a function to go up
         FLIFT.run_angle(speed, pct * ONE_PERCENT, then=Stop.HOLD, wait=True)
