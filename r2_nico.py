@@ -1,5 +1,5 @@
 #!/usr/bin/env pybricks-micropython
-from robotsetup import ev3, driver, door, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor, Dump
+from robotsetup import ev3, driver, door, r_color, l_color, gyro, l_DriveMotor, r_DriveMotor, dumper
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.media.ev3dev import SoundFile, ImageFile
 from linefollow import followBlack
@@ -10,11 +10,11 @@ from dump import Dump
 def run2():
     driver.settings(straight_speed=300)
     #drive to the dance floor
-    door.up(150,50)#lifts door uo 50%
+    door.up(150,50)#lifts door uo 50% to ready to catch health units
     gyroRight(28)#turns right to face dance floor health
     driver.straight(935) #drives to dance floor
     driver.stop()
-    door.down(150,50)
+    door.down(150,50) #brings door down to catch health unit
     driver.stop() #stops for gyro
     gyroRight(65) #turns to face black line
     driver.settings(straight_speed=125) #set straight speed
@@ -39,29 +39,30 @@ def run2():
     dumper.up(150,10) #dump moves up to flip
     driver.straight(10) #forward to not catch
     dumper.up(150,10) #moves up to finish fliping the flip
-    driver.straight(50) #goes forward to 
-    driver.stop()#
-    driver.settings(straight_speed=300)
-    driver.stop() 
-    gyroRight(20)
+    driver.straight(50) #goes forward to finish the dump
     driver.stop()
-    driver.straight(50)
-    door.up(125,45)
+    driver.settings(straight_speed=300) #changing the speed so its faster to cut down on time 
+    #(we get speedy)
+    driver.stop() #stops for gyro
+    gyroRight(20) #turns overso we are in line with the slide
+    driver.stop() #stops because its inportant to do that
+    driver.straight(50) #goes forward so we are by the slide 
+    door.up(125,45) #brings door up to knock down the poor little people
     driver.stop()
-    driver.settings(straight_speed=300)
-    driver.straight(70)
+    driver.straight(70) #goes straight to actually knock them down
     driver.stop()
-    driver.straight(-72)
+    driver.straight(-72) #goes backwards so we down hurt our robot by turning them
     driver.stop()
-    door.down(100,45)
-    dumper.up(300,40)
-    gyroRight(41)
-    driver.straight(400)
+    door.down(100,45) #brings door down so we don't accidently hit something
+    dumper.up(300,40) #brings dump up becuse we don't want to forget and get penilized 
     driver.stop()
-    gyroLeft(95)
-    door.up(100,80)
-    driver.straight (496)
+    gyroRight(41) #turns so we are facing bench/baskitball area
+    driver.straight(400) #drives so we are parallel
+    driver.stop() #stops because the gyro dosn't like us when we don't
+    gyroLeft(95) #turns so we are facing little dudes
+    door.up(100,80) #brings door up to prepare to trap little dudes
+    driver.straight (496) #drives forward to trap little dudes
     driver.stop()
-    door.down(100,75)
-    gyroRight(90)
-    driver.straight(803)
+    door.down(100,75) #now actually finally traps little dudes
+    gyroRight(90) #turns right to face home
+    driver.straight(803) #drives into home

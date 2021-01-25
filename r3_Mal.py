@@ -2,7 +2,7 @@
 from robotsetup import ev3, driver, door, r_color, l_color
 from turning import gyroRight, gyroLeft
 
-def run3(): #making run three a module for main to cut down on start up time
+def run3(): #making run three a function for main to cut down on start up time
     driver.settings(straight_speed=200) #setting the speed when you go straight to always be 200
     driver.straight(445) #goes straight to bench driving health units and innovation challenge
     driver.stop() #stops
