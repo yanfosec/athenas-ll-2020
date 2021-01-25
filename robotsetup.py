@@ -20,8 +20,8 @@ d_motor = Motor(Port.A)
 door = Door(d_motor, 180)
 
 #DUMP
-#dumpMotor = Motor(Port.D)
-#dumper = Dump(dumpMotor, 165)
+dumpMotor = Motor(Port.D)
+dumper = Dump(dumpMotor, 165)
 
 ## CREATE THE COLOR SENSORS ##
 r_color = ColorSensor(Port.S4) 

@@ -11,9 +11,10 @@ from r5_step import run4
 ## Main Program      ##
 #######################
 
-ev3.speaker.set_volume(100)
-ev3.speaker.set_speech_options(language='el',voice='f3',speed=60)
-ev3.speaker.say("lets go athenas  we got this")
+ev3.speaker.set_volume(100) #telling the speker to talk at volume 100 aka 100%
+ev3.speaker.set_speech_options(language='el',voice='f3',speed=60) #settieng the accent to greek the
+#voice to female and the speed 60 wpm
+ev3.speaker.say("lets go athenas  we got this") #telling it to say whatever we want
 
 while True: #basicly a forever loop
     while not any(ev3.buttons.pressed()): #if no buttons are being pressed wait
