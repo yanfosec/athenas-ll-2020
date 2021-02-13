@@ -26,3 +26,6 @@ class Dump: #creating a class
 
     def up(self,speed,pct): #creating a function to go up
         FLIFT.run_angle(speed, pct * ONE_PERCENT, then=Stop.HOLD, wait=True)
+
+    def run_until_stalled(self,speed):
+        FLIFT.run_until_stalled(speed)
