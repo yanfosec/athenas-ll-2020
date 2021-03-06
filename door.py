@@ -26,3 +26,6 @@ class Door: #creacting the class
 
     def down (self, speed, pct): #creating a function for down
         DOORA.run_angle(speed, pct * ONE_PERCENT, then=Stop.HOLD, wait=True)
+
+    def run_until_stalled(self, speed):
+        DOORA.run_until_stalled(speed)

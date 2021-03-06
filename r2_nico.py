@@ -7,19 +7,49 @@ import time
 from turning import gyroRight,gyroLeft
 from dump import Dump
 
+
 def run2():
     driver.settings(straight_speed=450)
-    ev3.speaker.beep()
+    driver.stop()
+    driver.straight(-10)
+    ev3.speaker.beep() # notify done
+    # drive until black
     gyro.reset_angle(0)
     driver.stop()
     driver.straight(75)
     driver.stop()
     gyroRight(79)
     driver.stop()
-    driver.straight(870)
+    driver.straight(1450)
     driver.stop()
     gyroRight(80)
     driver.straight(250)
+    driver.straight(-150)
+    driver.stop()
+    gyroRight(85)
+    driver.straight(-250)
+    driver.stop()
+    driver.settings(straight_speed=500)
+    l_DriveMotor.run_time(-600,4000)#runs treadmill
+    driver.stop()
+    driver.straight(260)#gets off treadmill
+    driver.stop()
+    gyroLeft(70)#facing wall
+    driver.straight(200)
+    driver.straight(-160)
+    driver.stop()
+    gyroRight(87)#facing home
+    driver.straight(300)
+    driver.stop()
+    while l_color.reflection()>12:
+        driver.drive(150,0)
+    driver.stop()
+    driver.straight(130)
+    driver.stop()
+    #run2 starts
+    driver.settings(straight_speed=450)
+    gyroLeft(90)
+    driver.straight(350)
     driver.straight(-690)
     driver.stop()
     driver.settings(straight_speed=300)
@@ -27,7 +57,7 @@ def run2():
     #driver.straight(470) #move forward to GO UNDER BRIDGE
     #driver.straight(-375) #goes backwards go go back to target
     driver.stop()
-    driver.straight(70)
+    driver.straight(100)
     dumper.up(300,30) #dumper moves up 30% to get lined up with flip
      #moves forward to be at right distance to flip
     driver.stop() #stops for gyro
@@ -54,7 +84,7 @@ def run2():
     driver.straight(-110) #goes backwards so we down hurt our robot by turning them
     driver.stop()
     door.down(100,45) #brings door down so we don't accidently hit something
-    dumper.up(300,40) #brings dump up becuse we don't want to forget and get penilized 
+    dumper.run_until_stalled(300) #brings dump up becuse we don't want to forget and get penilized 
     driver.stop()
     gyroRight(41) #turns so we are facing bench/baskitball area
     driver.straight(440) #drives so we are parallel
