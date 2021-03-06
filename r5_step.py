@@ -10,7 +10,7 @@ from linefollow import followBlack
 
 def run4():#creats a function for run 4
     driver.stop() #stops for membory problem
-    driver.settings(straight_speed=450) #definig straight speed
+    driver.settings(straight_speed=500) #definig straight speed
     driver.straight(600) #going straight to get out near sc
     driver.stop() #stoping to try and drop
     driver.straight(150) #goes forward more; closer to the step counter
