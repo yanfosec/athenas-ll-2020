@@ -14,12 +14,6 @@ WHITE = 95
 
 threshold = (BLACK + WHITE) / 2
 
-# Set the gain of the proportional line controller. This means that for every
-# percentage point of light deviating from the threshold, we set the turn
-# rate of the drivebase to 1.2 degrees per second.
-
-# For example, if the light value deviates from threshold by 10, the robot
-# steers at 10*1.2 = 12 degrees per second.
 PROPORTIONAL_GAIN = 0.7
 
 def followBlack(thisSensor,DRIVE_SPEED=150):
