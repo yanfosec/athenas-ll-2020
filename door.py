@@ -18,14 +18,34 @@ class Door: #creacting the class
         DOORA = motorobject
         DOORA.reset_angle(0)
         ONE_PERCENT = maxangle/100
-
-        return
+        #DOORA.control.stall_tolerances(7,1000)
     
     def up (self, speed, pct): #creating a function for up
-        DOORA.run_angle(speed, pct * ONE_PERCENT * -1, then=Stop.HOLD, wait=True)
+        global ONE_PERCENT
+        DOORA.run_angle(speed, pct * ONE_PERCENT * -1, then=Stop.HOLD, wait=False)
+        print("Status: " + str(DOORA.control.done()))
+        while not DOORA.control.done():
+            if DOORA.control.stalled():
+                print("Status up = stalled ")              
+                DOORA.hold()
+                break
+        return DOORA.angle()/ONE_PERCENT*-1
+
 
     def down (self, speed, pct): #creating a function for down
-        DOORA.run_angle(speed, pct * ONE_PERCENT, then=Stop.HOLD, wait=True)
+        DOORA.run_angle(speed, pct * ONE_PERCENT, then=Stop.HOLD, wait=False)
+        while not DOORA.control.done():
+            if DOORA.control.stalled():
+                print("Status down = stalled") 
+                DOORA.hold()
+                break
+        return DOORA.angle()/ONE_PERCENT*-1
+
+
 
     def run_until_stalled(self, speed):
         DOORA.run_until_stalled(speed)
+        return DOORA.angle()/ONE_PERCENT*-1
+
+
+    

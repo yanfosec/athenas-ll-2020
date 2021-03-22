@@ -19,9 +19,6 @@ class Forklift:
         #FLIFT.run_time(100,6000, then=Stop.HOLD, wait=True)
         FLIFT.reset_angle(0)
         ONE_PERCENT = maxangle/100 
-
-        #forkmotor = Moftor(Port.A)
-        #forkmotor.run_time(500, 20000, then=Stop.HOLD, wait=True)
         return
     
     def up (self, speed, pct):

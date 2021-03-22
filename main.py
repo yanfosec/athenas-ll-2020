@@ -9,6 +9,7 @@ from r2_nico import run2
 from r5_step import run4
 from r4_hermoine import run5
 from r1_angelica import run1
+from Back_corner import runB
 #######################
 ## Main Program      ##
 #######################
@@ -38,6 +39,7 @@ while True: #basicly a forever loop
     if Button.UP in ev3.buttons.pressed(): #if up button is pressed run run 2
         ev3.speaker.beep()
         wait(20)
+        runB()
         run2()
         driver.stop()
         ev3.speaker.beep()
